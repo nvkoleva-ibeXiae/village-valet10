@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "latest",
+    "cors": "^2.8.5",
+    "dotenv": "latest",
+    "express": "latest",
+    "firebase-admin": "^8.11.0",
+    "generate-password": "^1.5.1",
+    "helmet": "^3.22.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "node-cron": "^2.0.3",
+    "nodemailer": "^6.4.4"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}

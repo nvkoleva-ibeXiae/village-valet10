@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "body-parser": "latest",
+    "cors": "^2.8.5",
+    "dotenv": "latest",
+    "express": "latest",
+    "firebase-admin": "^8.11.0",
+    "helmet": "^3.22.0",
+    "jsonwebtoken": "^8.5.1",
+    "node-cron": "^2.0.3"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
