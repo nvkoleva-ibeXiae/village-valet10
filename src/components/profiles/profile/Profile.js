@@ -13,6 +13,7 @@ import EC from "../registration/EmergencyInformation.js";
 import CI from "../registration/CaregiveInformation.js"
 import CA from "../registration/CommonAddresses.js";
 import SA from "../registration/SpecialAccommodations.js";
+import UR from "../registration/RiderUpcomingRides.js";
 
 import VE from "../registration/VehicleInformation.js";
 import VS from "../registration/VolunteerSchedule.js";
@@ -341,6 +342,28 @@ class Profile extends Component {
                    return <SA/>;
                 }
                 break;
+            case "upcoming_rides":
+                if (this.state.mode === "view") {
+                    return (
+                        <Table striped bordered><tbody>
+                            <tr>
+                                <th>Allergies</th><td>{this.props.user.accommodations.allergies}</td>
+                            </tr>
+                            <tr>
+                                <th>Mobility Aid</th><td>{this.props.user.accommodations.mobility_aid}</td>
+                            </tr>
+                            <tr>
+                                <th>Smoke Free</th><td>{this.props.user.accommodations.smoke_preference.replace(/^\w/, c => c.toUpperCase())}</td>
+                            </tr>
+                            <tr>
+                                <th>Additional Accommodations</th><td>{this.props.user.accommodations.special}</td>
+                            </tr>
+                        </tbody></Table>
+                    );
+                } else if (this.state.mode === "edit") {
+                   return <UR/>;
+                }
+                break;
             default:
                 break;
         }
@@ -453,6 +476,8 @@ class Profile extends Component {
                                                     onClick={() => this.changePage("addresses")}>Addresses</ListGroup.Item>
                                     <ListGroup.Item active={this.state.sub_page === "special"}
                                                     onClick={() => this.changePage("special")}>Special Accommodations</ListGroup.Item>
+                                    <ListGroup.Item active={this.state.sub_page === "upcoming_rides"}
+                                                    onClick={() => this.changePage("upcoming_rides")}>Upcoming Rides</ListGroup.Item>
                                 </>
                             }
                         </ListGroup>

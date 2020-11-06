@@ -32,7 +32,7 @@ let transporter;
 transporter = nodemailer.createTransport({
     host: SMTP_SERVER,
     port: SMTP_PORT,
-    secure: true,
+    secure: false,
     auth: {
         user: SMTP_USERNAME,
         pass: SMTP_PASSWORD
